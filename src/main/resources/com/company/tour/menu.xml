@@ -7,6 +7,7 @@
         <item view="Stop.list" title="msg://com.company.tour.view.stop/stopListView.title"/>
         <item view="Transport.list" title="msg://com.company.tour.view.transport/transportListView.title"/>
         <item view="Tour.list" title="msg://com.company.tour.view.tour/tourListView.title"/>
+        <item view="OfficePlanView" title="msg://com.company.tour.view.officeplan/officePlanView.title"/>
     </menu>
 
     <menu id="map-samples" title="msg://com.company.tour/map-samples.menu.title">
@@ -19,6 +20,7 @@
               title="msg://com.company.tour.view.sample.projection.wgsprojection/wgsProjectionSampleView.title"/>
         <item view="ReprojectionSampleView"
               title="msg://com.company.tour.view.sample.projection.reprojection/reprojectionSampleView.title"/>
+        <item view="OsmTileView" title="msg://com.company.tour.view.osmtile/osmTileView.title"/>
     </menu>
 
 </menu-config>

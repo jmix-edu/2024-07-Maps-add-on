@@ -7,7 +7,7 @@
             <maps:layers>
                 <maps:tile>
                     <maps:xyzSource wrapX="false"
-                                    url="http://localhost:8089/geoserver/gwc/service/tms/1.0.0/ne:world@png/{z}/{x}/{-y}.png"/>
+                                    url="http://localhost:18080/geoserver/gwc/service/tms/1.0.0/ne:world@png/{z}/{x}/{-y}.png"/>
                 </maps:tile>
             </maps:layers>
         </maps:geoMap>

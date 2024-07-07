@@ -52,7 +52,6 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    runtimeOnly 'org.hsqldb:hsqldb'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -70,6 +69,7 @@ dependencies {
         implementation.exclude(group: 'javax.media', module: 'jai_core')
     }
     implementation 'javax.media.jai:com.springsource.javax.media.jai.core'
+    implementation 'org.postgresql:postgresql'
 }
 
 test {

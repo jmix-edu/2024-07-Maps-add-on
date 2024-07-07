@@ -23,6 +23,8 @@
         <formLayout id="form" dataContainer="stopDc">
             <textField id="nameField" property="name"/>
             <textField id="durationField" property="duration"/>
+            <textField id="routeField" property="route"/>
+            <textField id="locationField" property="location"/>
         </formLayout>
         <h4 text="msg://com.company.tour.entity/Stop.tours"/>
         <hbox id="buttonsPanel" classNames="buttons-panel">

@@ -39,6 +39,7 @@
                 </actions>
             </entityPicker>
             <textField id="routeColorField" property="routeColor"/>
+            <textField id="routeField" property="route"/>
         </formLayout>
         <h4 text="msg://com.company.tour.entity/Tour.stops"/>
         <hbox id="buttonsPanel" classNames="buttons-panel">

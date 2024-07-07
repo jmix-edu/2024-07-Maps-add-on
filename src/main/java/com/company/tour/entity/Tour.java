@@ -5,6 +5,7 @@ import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import org.locationtech.jts.geom.LineString;
 
 import java.util.List;
 import java.util.UUID;
@@ -20,6 +21,9 @@ public class Tour {
     @Column(name = "ID", nullable = false)
     @Id
     private UUID id;
+
+    @Column(name = "ROUTE")
+    private LineString route;
 
     @InstanceName
     @Column(name = "NAME", nullable = false)
@@ -53,6 +57,14 @@ public class Tour {
 
     @Column(name = "ROUTE_COLOR")
     private String routeColor;
+
+    public LineString getRoute() {
+        return route;
+    }
+
+    public void setRoute(LineString route) {
+        this.route = route;
+    }
 
     public String getRouteColor() {
         return routeColor;

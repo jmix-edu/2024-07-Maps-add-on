@@ -8,7 +8,7 @@
                      width="100%">
             <maps:layers>
                 <maps:tile>
-                    <maps:tileWmsSource url="http://localhost:8089/geoserver/tutorial/wms"
+                    <maps:tileWmsSource url="http://localhost:18080/geoserver/tutorial/wms"
                                         serverType="GEO_SERVER">
                         <maps:parameters>
                             <maps:parameter name="layers" value="tutorial:countries"/>

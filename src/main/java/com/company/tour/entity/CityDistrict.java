@@ -7,6 +7,7 @@ import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import org.locationtech.jts.geom.Polygon;
 
 import java.util.UUID;
 
@@ -21,6 +22,10 @@ public class CityDistrict {
     @Id
     private UUID id;
 
+    @Column(name = "AREA", nullable = false)
+    @NotNull
+    private Polygon area;
+
     @InstanceName
     @Column(name = "NAME", nullable = false)
     @NotNull
@@ -30,6 +35,14 @@ public class CityDistrict {
     @JoinColumn(name = "CITY_ID", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private City city;
+
+    public Polygon getArea() {
+        return area;
+    }
+
+    public void setArea(Polygon area) {
+        this.area = area;
+    }
 
     public City getCity() {
         return city;

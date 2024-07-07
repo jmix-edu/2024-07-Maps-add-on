@@ -5,6 +5,8 @@ import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import org.locationtech.jts.geom.LineString;
+import org.locationtech.jts.geom.Point;
 
 import java.util.List;
 import java.util.UUID;
@@ -18,6 +20,13 @@ public class Stop {
     @Id
     private UUID id;
 
+    @Column(name = "LOCATION", nullable = false)
+    @NotNull
+    private Point location;
+
+    @Column(name = "ROUTE")
+    private LineString route;
+
     @InstanceName
     @Column(name = "NAME", nullable = false)
     @NotNull
@@ -25,11 +34,28 @@ public class Stop {
 
     @Column(name = "DURATION")
     private Integer duration;
+
     @JoinTable(name = "TOUR_STOP_LINK",
-            joinColumns = @JoinColumn(name = "STOP_ID"),
-            inverseJoinColumns = @JoinColumn(name = "TOUR_ID"))
+            joinColumns = @JoinColumn(name = "STOP_ID", referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "TOUR_ID", referencedColumnName = "ID"))
     @ManyToMany
     private List<Tour> tours;
+
+    public Point getLocation() {
+        return location;
+    }
+
+    public void setLocation(Point location) {
+        this.location = location;
+    }
+
+    public LineString getRoute() {
+        return route;
+    }
+
+    public void setRoute(LineString route) {
+        this.route = route;
+    }
 
     public List<Tour> getTours() {
         return tours;

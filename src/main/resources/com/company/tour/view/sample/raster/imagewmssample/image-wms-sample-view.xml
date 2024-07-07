@@ -9,7 +9,7 @@
             </maps:mapView>
             <maps:layers>
                 <maps:image>
-                    <maps:imageWmsSource url="http://localhost:8089/geoserver/nurc/wms"
+                    <maps:imageWmsSource url="http://localhost:18080/geoserver/nurc/wms"
                                          serverType="GEO_SERVER">
                         <maps:parameters>
                             <maps:parameter name="layers" value="nurc:Img_Sample"/>
