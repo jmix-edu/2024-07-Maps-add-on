@@ -2,6 +2,20 @@
 <view xmlns="http://jmix.io/schema/flowui/view"
       xmlns:maps="http://jmix.io/schema/maps/ui"
       title="msg://officePlanView.title">
+
+    <data>
+        <collection id="usersDc" class="com.company.tour.entity.User">
+            <loader id="usersDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from User e]]>
+                </query>
+            </loader>
+            <fetchPlan extends="_base"/>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
     <layout>
         <maps:geoMap id="officePlan" height="100%" width="100%">
             <maps:mapView zoom="2" centerX="500" centerY="310">
@@ -15,6 +29,12 @@
                         <maps:imageExtent minX="0" minY="0" maxX="1000" maxY="621"/>
                     </maps:imageStaticSource>
                 </maps:image>
+                <maps:vector id="vector">
+                    <maps:vectorSource id="source"/>
+                </maps:vector>
+                <maps:vector id="dataVector">
+                    <maps:dataVectorSource id="dataSource" dataContainer="usersDc" property="workspaceLocation"/>
+                </maps:vector>
             </maps:layers>
         </maps:geoMap>
     </layout>
